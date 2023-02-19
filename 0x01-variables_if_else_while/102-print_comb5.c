@@ -11,42 +11,39 @@
  * The combinations of numbers should be printed in ascending order
  * 00 01 and 01 00 are considered as the same combination of numbers 0 and 1
  * You can only use the putchar function
- * (every other function (printf, puts, etc…) is forbidden)
+ * (every other functon (printf, puts, etc…) is forbidden)
  * You can only use putchar eight times maximum in your code
  * You are not allowed to use any variable of type char
  * All your code should be in the main function
  *
  * Return: Always 0 (Success)
+ *
  */
 int main(void)
 {
-	int i, j, k, m;
+	int i, j;
 
-	for (i = 0; i < 10; i++)
+	for (i = 0; i < 100; i++)
 	{
-		for (j = 0; j < 10; j++)
+		for (j = 0; j < 100; j++)
 		{
-			for (k = 0; k < 10; k++)
+			if (i < j)
 			{
-				for (m = 0; m < 10; m++)
+				putchar((i / 10) + '0');
+				putchar((i % 10) + '0');
+				putchar(' ');
+				putchar((j / 10) + '0');
+				putchar((j % 10) + '0');
+				if (i != 98 || j != 99)
 				{
-					if (i <= k && j <= m && i + j != k + m)
-					{
-						putchar(i + '0');
-						putchar(j + '0');
-						putchar(' ');
-						putchar(k + '0');
-						putchar(m + '0');
-					if (i != 9 || j != 8 || k != 9 || m != 9)
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					}
+					putchar(',');
+					putchar(' ');
 				}
 			}
+
 		}
 	}
 	putchar('\n');
 	return (0);
 }
+
