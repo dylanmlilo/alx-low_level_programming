@@ -2,7 +2,8 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - Entry point
+ * main - print the last digit of the number stored in the variable n
+ * main - check if the last digit is greater or less than 5 or is 0
  *
  * Return: Always 0 (Success)
  */
