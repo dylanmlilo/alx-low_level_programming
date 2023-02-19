@@ -2,7 +2,7 @@
 #include <stdlib.h>
 #include <time.h>
 /**
- * main - print the last digit of the number stored in the variable n
+ * main - Entry point
  *
  * Return: Always 0 (Success)
  */
@@ -19,11 +19,11 @@ int main(void)
 	}
 	else if (num == 0)
 	{
-		printf("Last digit of %d is %d and is zero\n", n, num);
+		printf("Last digit of %d is %d and is 0\n", n, num);
 	}
 	else if (num < 6)
 	{
-		printf("Last digit of %d is %d and is less than 6 and not zero\n", n, num);
+		printf("Last digit of %d is %d and is less than 6 and not 0\n", n, num);
 	}
 	return (0);
 }
