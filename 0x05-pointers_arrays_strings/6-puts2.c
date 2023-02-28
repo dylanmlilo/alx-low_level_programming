@@ -10,7 +10,6 @@
 void puts2(char *str)
 {
 	int length = 0;
-	int t = 0;
 	char *s = str;
 	int i;
 
@@ -20,9 +19,7 @@ void puts2(char *str)
 		length++;
 	}
 
-	t = length - 1;
-
-	for (i = 0 ; i <= t ; i++)
+	for (i = 0 ; i <= length - 1 ; i++)
 	{
 		if (i % 2 == 0)
 	{
