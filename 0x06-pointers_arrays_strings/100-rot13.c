@@ -28,6 +28,7 @@ char *rot13(char *sr)
 			if (sr[i] == s1[j])
 			{
 				sr[i] = s2[j];
+				break;
 			}
 		}
 	}
