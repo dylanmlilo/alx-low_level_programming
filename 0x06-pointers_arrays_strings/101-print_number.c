@@ -16,7 +16,7 @@
 
 void print_number(int num)
 {
-	unsigned int k;
+	unsigned int k, num1;
 
 	if (num < 0)
 	{
@@ -24,12 +24,14 @@ void print_number(int num)
 		num = -num;
 	}
 
-	if (num  / 10 != 0)
+	num1 = num;
+
+	if (num1  / 10 != 0)
 	{
-		print_number(num / 10);
+		print_number(num1 / 10);
 	}
 
-	k = num % 10;
+	k = num1 % 10;
 	_putchar(k + '0');
 }
 
