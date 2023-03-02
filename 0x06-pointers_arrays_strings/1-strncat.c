@@ -3,7 +3,7 @@
 
 /**
  * _strcat - function that concatenates two strings
- * 
+ *
  * It will use at most n bytes from src; and
  * src does not need to be null-terminated if it contains n or more bytes
  * Return a pointer to the resulting string dest
