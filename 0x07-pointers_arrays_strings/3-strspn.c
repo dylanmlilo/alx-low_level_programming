@@ -20,10 +20,14 @@ unsigned int _strspn(char *s, char *accept)
 	{
 		for (i = 0; accept[i] != '\0'; i++)
 		{
-			if (s[i] == accept[i])
+			if (*s == accept[i])
 			{
 				count++;
 				break;
+			}
+			else if (accept[i + 1] == '\0')
+			{
+				return (count);
 			}
 		}
 		s++;
