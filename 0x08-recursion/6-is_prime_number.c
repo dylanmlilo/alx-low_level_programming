@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include "main.h"
 
-int actual_prime(int n, int i);
+int recursive_prime(int n, int i);
 
 /**
  * is_prime_number - function that returns 1 if the input integer
@@ -20,7 +20,7 @@ int is_prime_number(int n)
 	}
 	else
 	{
-		return (actual_prime(n, n - 1));
+		return (recursive_prime(n, n - 1));
 	}
 }
 
