@@ -27,16 +27,16 @@ int main(int argc, char *argv[])
 
 	if (change < 0)
 	{
-		printf("0\n");
+		printf("%d\n", 0);
 		return (0);
 	}
 
-	for (i = 0; i < 5; i++)
+	for (i = 0; i < 5 && change >= 0; i++)
 	{
 		while (change >= coins[i])
 		{
 			cents++;
-			change = change + coins[i];
+			change = change - coins[i];
 		}
 	}
 
