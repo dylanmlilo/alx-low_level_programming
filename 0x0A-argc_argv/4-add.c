@@ -1,10 +1,10 @@
 #include <stdio.h>
-#include "main.h"
+#include <stdlib.h>
 #include <ctype.h>
 #include <string.h>
 
 int _atoi(char *s);
-int check_num(char *str);
+int check_number(char *str);
 
 /**
  * main - program that adds positive numbers
@@ -17,29 +17,24 @@ int check_num(char *str);
 
 int main(int argc, char *argv[])
 {
-	int i, sum, count;
+	int i, sum;
 
 	sum = 0;
-	count = 1;
 
-	if (argc == 1)
+	for (i = 1; i < argc; i++)
 	{
-		printf("%d\n", 0);
-	}
-	if (check_num(argv[count]))
-	{
-		for (i = 1; i < argc; i++)
+		if (check_number(argv[i]))
 		{
 			sum  += _atoi(argv[i]);
 		}
-		printf("%d\n", sum);
-		return (0);
+		else
+		{
+			printf("Error\n");
+			return (1);
+		}
 	}
-	else
-	{
-		printf("Error\n");
-		return (1);
-	}
+	printf("%d\n", sum);
+	return (0);
 }
 
 /**
@@ -90,26 +85,23 @@ int _atoi(char *s)
 }
 
 /**
- * check_num - check if arguments are digits
+ * check_number - checks if arguments are digits
  *
- * @str: array str
+ * @str: string array
  *
- * Return: Always 0 (Success)
+ * Return: Always 0 (Success) 1 (Failure)
  */
 
-int check_num(char *str)
+int check_number(char *str)
 {
-	unsigned int count;
+	unsigned int i;
 
-	count = 0;
-
-	while (count < strlen(str))
+	for (i = 0; i < strlen(str); i++)
 	{
-		if (!isdigit(str[count]))
+		if (!isdigit(str[i]))
 		{
 			return (0);
 		}
-		count++;
 	}
 	return (1);
 }
