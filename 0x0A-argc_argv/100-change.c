@@ -4,7 +4,7 @@
 /**
  * main - program that prints the minimum number of
  * coins to make change for an amount of money
- * 
+ *
  * @argc: the number of arguments
  * @argv: array of arguments(argument vector
  *
@@ -13,53 +13,33 @@
 
 int main(int argc, char *argv[])
 {
-	int change, cents;
+	int i, change, cents;
+	int coins[] = {25, 10, 5, 2, 1};
 
-	cents = 0;
-	change = atoi(argv[1]);
-	
 	if (argc != 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-	else if (change < 0)
+
+	change = atoi(argv[1]);
+	cents = 0;
+
+	if (change < 0)
 	{
-		printf("%d\n", 0);
+		printf("0\n");
+		return (0);
 	}
-	else
+
+	for (i = 0; i < 5; i++)
 	{
-		while (change >= 25)
+		while (change >= coins[i])
 		{
-			change = change - 25;
 			cents++;
+			change = change + coins[i];
 		}
-		while (change >= 10)
-		{
-			change = change - 10;
-			cents++;
-		}
-		while (change >= 10)
-		{
-			change = change - 10;
-			cents++;
-		}
-		while (change >= 5)
-		{
-			change = change - 5;
-			cents++;
-		}
-		while (change >= 2)
-		{
-			change = change - 2;
-			cents++;
-		}
-		while (change >= 1)
-		{
-			change = change - 1;
-			cents++;
-		}
-		printf("%d", cents);
 	}
+
+	printf("%d\n", cents);
 	return (0);
 }
