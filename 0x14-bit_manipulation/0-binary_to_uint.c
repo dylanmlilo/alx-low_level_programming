@@ -21,6 +21,9 @@ unsigned int binary_to_uint(const char *b)
 
 	length = len = strlen(b);
 
+	if (!b)
+		return (0);
+
 	for (i = 0; i < length; i++)
 	{
 		if (b[i] == 49)
@@ -29,7 +32,6 @@ unsigned int binary_to_uint(const char *b)
 			num = 0;
 		else
 		{
-			b = NULL;
 			return (0);
 		}
 		for (j = 1; j < len; j++)
